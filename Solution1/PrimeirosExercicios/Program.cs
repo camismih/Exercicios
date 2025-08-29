@@ -2,7 +2,7 @@
 
 class Program
 {
-    public static double Somar(double num1, double num2) => num1 + num2;
+    /*public static double Somar(double num1, double num2) => num1 + num2;
     public static double Subtrair(double num1, double num2) => num1 - num2;
     public static double Multiplicar(double num1, double num2) => num1 * num2;
     public static double Dividir(double num1, double num2)
@@ -21,7 +21,7 @@ else
     {
         double soma = Somar(num1, num2);
         return Dividir(soma, 2);
-    }
+    }*/
     static void Main()
     {
         /*Console.WriteLine("Digite seu nome");
@@ -30,7 +30,7 @@ else
         /*var nome = "Vince";
         var sobreNome = "Vancinni";
         Console.WriteLine($"Perdeu a memória, foi? Seu Nome é: {nome} E seu sobrenome é {sobreNome}");*/
-        Console.WriteLine("--- Calculadora Simples ---");
+        /*Console.WriteLine("--- Calculadora Simples ---");
         Console.Write("Por favor, digite o primeiro número");
         double valor1 = double.Parse(Console.ReadLine());
         Console.Write("Agora, digite o segundo número: ");
@@ -47,6 +47,12 @@ else
         Console.WriteLine($"Subtração: {resultadoSubtracao}");
         Console.WriteLine($"Multiplicação: {resultadoMultiplicacao}");
         Console.WriteLine($"Divisão: {resultadoDivisao}");
-        Console.WriteLine($"Média: {resultadoMedia}");
+        Console.WriteLine($"Média: {resultadoMedia}");*/
+        Console.WriteLine("--- Contador de Caracteres ---");
+        Console.Write("Por favor, digite uma frase ou palavra: ");
+        var textoDigitado = Console.ReadLine();
+        var textoSemEspaços = textoDigitado.Replace(" ", "");
+        int quantidadeCaracteres = textoSemEspaços.Length;
+        Console.WriteLine($"\nA quantidade de caracteres digitados foi: {quantidadeCaracteres}");
     }
 }
