@@ -22,6 +22,23 @@ else
         double soma = Somar(num1, num2);
         return Dividir(soma, 2);
     }*/
+
+    public static bool ValidarPlaca(string placa)
+    {
+        if (string.IsNullOrEmpty(placa)) { return false; }
+       placa = placa.ToUpper();
+        if (placa.Length != 7) { return false; }
+        for (int i = 0; i < 3; i++)
+        {
+            if (!char.IsLetter(placa[i])) { return false; }
+        }
+        for(int i = 3; i <7; i++)
+        {
+            if (!char.IsDigit(placa[i])){ return false; }
+        }
+        return true;
+
+    }
     static void Main()
     {
         /*Console.WriteLine("Digite seu nome");
@@ -48,11 +65,25 @@ else
         Console.WriteLine($"Multiplicação: {resultadoMultiplicacao}");
         Console.WriteLine($"Divisão: {resultadoDivisao}");
         Console.WriteLine($"Média: {resultadoMedia}");*/
-        Console.WriteLine("--- Contador de Caracteres ---");
+        /*Console.WriteLine("--- Contador de Caracteres ---");
         Console.Write("Por favor, digite uma frase ou palavra: ");
         var textoDigitado = Console.ReadLine();
         var textoSemEspaços = textoDigitado.Replace(" ", "");
         int quantidadeCaracteres = textoSemEspaços.Length;
-        Console.WriteLine($"\nA quantidade de caracteres digitados foi: {quantidadeCaracteres}");
+        Console.WriteLine($"\nA quantidade de caracteres digitados foi: {quantidadeCaracteres}");*/
+
+        Console.WriteLine("--- Validador de Placa Veicular (Padrão Antigo) ---");
+        Console.Write("Digite a placa (ex: ABC1234): ");
+        var placaDigitada = Console.ReadLine();
+        if(ValidarPlaca(placaDigitada))
+        {
+            Console.WriteLine("\nA placa é VÁLIDA!");
+        }
+        else
+        {
+            {
+                Console.WriteLine("\nA placa é INVÁLIDA!");
+            }
+        }
     }
 }
