@@ -1,4 +1,5 @@
 ﻿namespace PrimeirosExercicios;
+using System.Globalization;
 
 class Program
 {
@@ -23,7 +24,7 @@ else
         return Dividir(soma, 2);
     }*/
 
-    public static bool ValidarPlaca(string placa)
+    /*public static bool ValidarPlaca(string placa)
     {
         if (string.IsNullOrEmpty(placa)) { return false; }
        placa = placa.ToUpper();
@@ -38,9 +39,10 @@ else
         }
         return true;
 
-    }
+    } */
     static void Main()
     {
+        CultureInfo.CurrentCulture = new CultureInfo("pt-BR");
         /*Console.WriteLine("Digite seu nome");
         var nome = Console.ReadLine();
         Console.WriteLine($"Seja bem-vindo/A! {nome}"); */
@@ -72,7 +74,7 @@ else
         int quantidadeCaracteres = textoSemEspaços.Length;
         Console.WriteLine($"\nA quantidade de caracteres digitados foi: {quantidadeCaracteres}");*/
 
-        Console.WriteLine("--- Validador de Placa Veicular (Padrão Antigo) ---");
+        /*Console.WriteLine("--- Validador de Placa Veicular (Padrão Antigo) ---");
         Console.Write("Digite a placa (ex: ABC1234): ");
         var placaDigitada = Console.ReadLine();
         if(ValidarPlaca(placaDigitada))
@@ -84,6 +86,16 @@ else
             {
                 Console.WriteLine("\nA placa é INVÁLIDA!");
             }
-        }
+        }*/
+        DateTime dataAtual = DateTime.Now;
+        Console.WriteLine("--- Exibindo a Data Atual em Vários Formatos ---");
+        string formatoCompleto = dataAtual.ToString("dddd, dd 'de' MMMM 'de' yyyy, 'as' hh:mm:ss");
+        Console.WriteLine($"\n1. Formato completo: {formatoCompleto}");
+        string formatoDataNumerica = dataAtual.ToString("dd/MM/yyyy");
+        Console.WriteLine($"2. Apenas a data: {formatoDataNumerica}");
+        string formatoHora24 = dataAtual.ToString("HH:mm:ss");
+        Console.WriteLine($"3. Apenas a hora (24h): {formatoHora24}");
+        string formatoMesExtenso = dataAtual.ToString("dd 'de' MMMM 'de' yyyy");
+        Console.WriteLine($"4. Data com mês por extenso: {formatoMesExtenso}");
     }
 }
